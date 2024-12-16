@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="lightlamp.css">
+
+
+</head>
+<body>
+    <nav>
+        <div class="header-img">
+
+            <img src="images/menu.png" alt="" class="img1">
+            <img src="images/logo copy.png" alt="" class="img2">
+        </div>
+        <ul>
+            <li><a href="#">Latest</a></li>
+            <li><a href="#">Modern</a></li>
+            <li><a href="#">contempary</a></li>
+            <li><a href="#">Afforadable</a></li>
+        </ul>
+        <button id="btn"><span></span></button>
+
+    </nav>
+    <div class="light">
+        <img src="images/lamp.png" alt="" class="lamp1">
+        <img src="images/light.png" alt="" class="lamp2">
+    </div>
+    <div class="content">
+        <h1>
+            Latest in <br>Lightining
+        </h1>
+        <p id="para">
+            This is the first Lamp of our company we are making the huge<br>
+            collection of modern lamps in all categories from home use to office
+
+        </p>
+        <a href="#" class="link">
+            Check all collection
+           
+        </a>
+    </div>
+    <script>
+        let span = document.querySelector("span")
+        let light  = document.querySelector(".lamp2")
+        span.addEventListener("click",(e)=>{
+            light.style.display ="none";
+            light.toggle("")
+            console.log("hello")
+
+        })
+    </script>
+    
+</body>
+</html>

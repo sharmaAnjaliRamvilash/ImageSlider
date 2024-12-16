@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+           
+
+        }
+        .container{
+            display: flex;
+            width: 900px;
+            overflow: scroll;
+        
+            align-items: center;
+            border: 1px solid black;
+            /* height: 10%; */
+            background-color: #333;
+            margin: 10% 0;
+            padding: 10%  10px;
+            height: fit-content;
+            
+
+        }
+        .images{
+            display: grid;
+            grid-template-columns: auto auto auto;
+                gap: 20px;
+               
+        }
+        .images img{
+            /* height: 50%; */
+             filter: grayscale(100%);
+             transition: 0.3s;
+             border-radius: 10px;
+             height: 60%;
+        
+        }
+        .btn{
+            cursor: pointer;
+        }
+        img:hover{
+            transform: scale(1.1);
+            filter: grayscale(0);
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="back"> 
+        <img src="back.png" alt="" class="btn btn1">
+    </div>
+    <div class="container">
+        
+        <div class="images">
+            <img src="image-1.png" alt="">
+            <img src="image-2.png" alt="">
+            <img src="image-3.png" alt="">
+        </div>
+        <div class="images">
+            <img src="image-4.png" alt="">
+            <img src="image-5.png" alt="">
+            <img src="image-6.png" alt="">
+        </div>
+       
+    </div>
+    <div class="next">
+        <img src="next.png" alt="" class="btn btn2">
+    </div>
+
+    <script>
+        let back = document.querySelector(".btn1")
+        let next = document.querySelector(".btn2")
+        let img = document.querySelector('.images')
+        img.addEventListener('wheel',(e)=>{
+            console.log("hello")
+            e.preventDefault();
+            img.style.scrollBehavior = "smooth"
+
+            img.scrollLeft += e.deltaY;
+        })
+        next.addEventListener('click',()=>{
+            img.scrollLeft += 900;
+            console.log("next")
+        });
+        back.addEventListener('click',()=>{
+            img.scrollLeft -= 900;
+            console.log("back")
+
+        });
+
+    </script>
+    
+</body>
+</html>

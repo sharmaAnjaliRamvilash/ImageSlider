@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+        }
+        .container{
+           /* display: grid;
+           grid-template-columns: auto auto auto; */
+           display: flex;
+
+           background: linear-gradient(135deg,red,purple);
+           /* align-items: center;
+           justify-content: space-around; */
+           width: 900px;
+           height: 100vh;
+           /* overflow: hidden; */
+           overflow-x: scroll;
+        }
+        .img img{
+            height: 400px;
+            width: 350px;
+            
+        }
+        .img{
+             display: flex;
+
+             
+        }
+        .icon{
+            cursor: pointer;
+
+        }
+        .container::-webkit-scrollbar{
+            display: none;
+        }
+        img{
+            filter: grayscale(0%);
+            transition: 0.3s ease-in-out;
+            width: 40px;
+        }
+
+        img:hover{
+            filter: grayscale(100%);
+            transform: scale(1.2);
+        }
+
+    </style>
+</head>
+<body>
+    <div class="icon">
+        <img src="images/back.png" alt="" class="back">
+    </div>
+    <div class="container">
+        <div class="img">
+            <img src="images/image-1.png" alt="">
+            <img src="images/image-2.png" alt="">
+            <img src="images/image-3.png" alt="">
+        </div>
+        <div class="img">
+            <img src="images/image-4.png" alt="">
+            <img src="images/image-5.png" alt="">
+            <img src="images/image-6.png" alt="">
+        </div>
+    </div>
+    <div class="icon">
+        <img src="images/next.png" alt="" class="next">
+    </div>
+    <script>
+        let back = document.querySelector(".back")
+        let next = document.querySelector(".next")
+        let container = document.querySelector(".container")
+
+    //   container.addEventListener("wheel",(e)=>{
+    //     e.preventDefault();
+    //         container.scrollLeft += e.deltaY;
+
+    //   })
+    back.addEventListener("click",()=>{
+        container.style.scrollBehavior ="smooth"
+       container.scrollLeft += 900
+})
+next.addEventListener('click',()=>{
+     container.style.scrollBehavior ="smooth"
+    container.scrollLeft -= 900;
+})
+
+        //  back.addEventListener("click",(e)=>{
+        //     e.preventDefault()
+             
+        //  })
+    </script>
+    
+</body>
+</html>

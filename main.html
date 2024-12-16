@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            height: 100vh;
+            width: 100%;
+            background-color: rgb(71, 67, 67);
+        }
+        nav{
+            position: relative;
+           padding: 10px 30px;
+        }
+        .box ul li a{
+            text-decoration: none;
+            color: #fff;
+            font-size: 20px;
+           
+            
+        }
+        .box ul li{
+            padding:6px 40px;
+        }
+        .box{
+            background-color: rgb(241, 241, 243);
+            width: fit-content;
+            border-radius: 10px;
+            margin: 20px;
+            display: none;
+           transition: 0.2s ease-in-out;
+            
+        }
+         .box  ul li a{
+            color: black;
+        }
+        nav img{
+          cursor: pointer;
+          height: 50px; 
+        }
+        .first{
+            display: block;
+            transition: 0.3s ease-in-out;
+        }
+        .second{
+            background-color: brown;
+        }
+        nav img ul li a{
+            list-style: none;
+        }
+
+
+    </style>
+</head>
+
+<body>
+
+  <nav>
+    <img src="images/menu.png" alt="" class="img" onclick="my()">
+  </nav>
+
+  <div class="box">
+    <ul>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Contact us</a></li>
+        <li><a href="#">Profile</a></li>
+        <li><a href="#">Collobrate us</a></li>
+    </ul>
+  </div>
+
+  <script>
+    let box = document.querySelector(".box")
+    let img = documente.querySelector(".img")
+  function  my(){
+    // box.style.display = "block"
+  console.log("click me")
+  box.classList.toggle("first")
+  let body  = document.querySelector("body")
+  body.classList.toggle("second")
+    
+
+  }
+  </script>
+
+
+    
+</body>
+</html>
